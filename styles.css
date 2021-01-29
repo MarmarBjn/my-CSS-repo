@@ -1,0 +1,786 @@
+/* All the photos used in this website are with permission of the main Artist Jonara Oliveira  https://jonaraoliveiraart.com/illustration */
+
+/* General Styling */
+html {
+  font-family: "Times New Roman", Times, serif;
+}
+
+* {
+  background-color: #191919;
+  box-sizing: border-box;
+  color: #ffffff;
+
+}
+
+*{margin, border, padding:0}
+
+
+head {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* use of web fonts for some headings*/
+@font-face {
+  font-family: Gondola_SD-Swash;
+  src: url("../fonts/Gondola_SD-Swash.ttf");
+}
+
+.webfont {
+  font-family: Gondola_SD-Swash;
+  color: #ffffff;
+  text-align: center;
+}
+
+img {
+  border: 0;
+}
+
+p {
+  margin: 5px;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+h1 {
+  font-size: 20px;
+  line-height: 18px;
+}
+
+h2 {
+  font-size: 18px;
+  line-height: 16px;
+}
+
+h3 {
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+}
+
+/*underline underneath of the heading */
+h1::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 2px;
+  margin: 10px auto 0;
+  background-color: #ffffff;
+  margin-bottom: 10px;
+}
+
+#button {
+  background-color: #214a23;
+  border: none;
+  padding: 10px 0px;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 25px auto 25px;
+  text-align: center;
+}
+
+/* layout the pages */
+/* All the three pages follow three main sections:
+1- section-nav-top
+2- section-inner
+3- Section-footer
+*/
+.section-inner {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Footer section */
+.section-footer {
+  width: 95%;
+  height: 50px;
+  margin: 30px auto 2px;
+  text-align: center;
+}
+
+.section-footer span {
+  color: #d1d1d1;
+  font-size: 10px;
+}
+
+.section-footer hr {
+  border: 1px dotted #333;
+}
+
+/* Hold the mster page contents*/
+.section-content {
+  position: relative;
+  display: block;
+}
+
+/* Interactive-block of the master page */
+.section-interactive-block {
+  width: 100%;
+  height: 440px;
+  padding: 15px;
+  background-image: url("../images/jonara.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  animation-name: bg-move;
+  animation-duration: 7s;
+  border-bottom: 1px solid #191919;
+}
+
+.section-content:after {
+  content: "";
+  height: 0;
+  margin: 0;
+  display: block;
+  clear: both;
+}
+
+.media-holder {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding: 0 0 60%;
+  background-color: #000;
+  overflow: hidden;
+}
+
+/* transition on hover - master page*/
+.media-holder:hover {
+  opacity: 0.2;
+  -webkit-transition: opacity .35s ease-out;
+  -moz-transition: opacity .35s ease-out;
+  -ms-transition: opacity .35s ease-out;
+  -o-transition: opacity .35s ease-out;
+  transition: opacity .35s ease-out
+}
+
+.media-holder img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: block;
+  opacity: 1;
+}
+
+.image-block {
+  position: relative;
+  width: 66.667%;
+}
+
+.text-block {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 33.333%;
+  height: 100%;
+  opacity: .75;
+  border: 1px solid #191919;
+}
+
+/* Float 2nd image block to the right*/
+.secondary-image-block {
+  float: right;
+}
+
+/* Float 2nd text block to the left*/
+.secondary-text-block {
+  left: 0;
+  right: auto;
+}
+
+.text-block h3 {
+  color: #c9b797;
+  margin: 0 20px;
+  padding: 20px 0 0;
+  font-size: 12px;
+  text-align: left;
+}
+
+.text-block h3::after {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 1px;
+  background-color: #fff;
+}
+
+.text-block p {
+  margin: 0 20px;
+  padding: 10px 0 20px;
+}
+
+.table {
+  width: 100%;
+  height: 100%;
+  display: table;
+}
+
+.table-cell {
+  text-align: left;
+  vertical-align: middle;
+  display: table-cell
+}
+
+p.small {
+  font-size: 13px;
+  line-height: 16px;
+  text-align: left;
+}
+
+.more {
+  color: #8e7d60;
+}
+
+/* overlaying text on a background image*/
+.darken-pseudo {
+  position: relative;
+}
+
+/* make the image darker */
+.darken-pseudo:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* styling the text over the image */
+.darken-with-text p {
+  margin: 0;
+  font-size: 20px;
+  line-height: 20px;
+  color: white;
+  padding-top: 15px;
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
+  text-align: center;
+}
+
+.darken-with-text span {
+  margin: 0;
+  color: white;
+  padding-top: 30px;
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
+}
+
+.darken-with-text h1 {
+  margin-top: 100px;
+  font-size: 36px;
+  color: white;
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
+  text-align: center;
+}
+
+.darken-with-text h2 {
+  margin: 0;
+  color: white;
+  padding-top: 30px;
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
+}
+
+/* animate the background image of the master page */
+@-webkit-keyframes bg-move {
+  0% {
+    background-position: 100% 100%
+  }
+
+  100% {
+    background-position: 0 0
+  }
+}
+
+@keyframes move {
+  0% {
+    background-position: 100% 100%
+  }
+
+  100% {
+    background-position: 0 0
+  }
+}
+
+/* layout menu and reservation page */
+.masthead {
+  position: relative;
+  width: 90%;
+  margin: 100px auto 25px;
+}
+
+.masthead img {
+  max-width: 50%;
+  margin: auto;
+  position: relative;
+  display: block;
+}
+
+.masthead p {
+  letter-spacing: 1px;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center;
+}
+
+.masthead span {
+  display: inline;
+}
+
+.masthead table {
+  margin: 40px auto 55px;
+  width: 80%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border: 1px solid #333;
+}
+
+.masthead td {
+  font-size: 13px;
+  line-height: 1.9;
+  vertical-align: middle;
+  text-align: center;
+  border: 1px solid #333;
+  margin-bottom: 15px;
+  padding: 5px;
+}
+
+.masthead th {
+  padding: 14px 15px 7px;
+  font-weight: normal;
+  font-size: 14px;
+  background-color: #000;
+  border: 1px solid #333;
+}
+
+.masthead th.active {
+  color: #8e7d60;
+  font-size: 18px;
+  font-weight: bold
+}
+
+/* Animated slideshow in the menu page */
+.slideshow {
+  width: 749px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: solid 1px #333;
+}
+
+.slideshow-container {
+  width: 2996px;
+  font-size: 0;
+  transition: 1s ease;
+  height: 450px;
+}
+
+.slideshow img {
+  width: 749px;
+  height: auto;
+  display: inline-block;
+  font-size: 16px;
+  text-align: center;
+}
+
+.slideshow-container:hover {
+  animation-play-state: paused;
+}
+
+.slide {
+  animation: slide 24s ease infinite;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0%);
+  }
+
+  12.5% {
+    transform: translateX(0%);
+  }
+
+  25% {
+    transform: translateX(-25%);
+  }
+
+  37.5% {
+    transform: translateX(-25%);
+  }
+
+  50% {
+    transform: translateX(-50%);
+  }
+
+  62.5% {
+    transform: translateX(-50%);
+  }
+
+  75% {
+    transform: translateX(-75%);
+  }
+
+  87.5% {
+    transform: translateX(-75%);
+  }
+
+  99% {
+    transform: translateX(-75%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Begin desktop styles */
+@media all and (min-width: 992px) {
+
+  #mobile-nav {
+    display: none;
+  }
+
+  /* Top navigation menu for big screens */
+  .section-nav-top {
+    width: 100%;
+    height: 50px;
+    padding: 10px 0px;
+    overflow: hidden;
+    position: fixed;
+    margin: 0;
+    top: 0;
+    z-index: 99;
+  }
+
+  .section-nav-top ul {
+    list-style-type: none;
+  }
+
+  .section-nav-top li {
+    float: left;
+  }
+
+  .section-nav-top a {
+    padding: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 25px;
+    border-radius: 1px;
+    width: 30px;
+    color: #808080;
+  }
+
+  .section-nav-top li:not(.logo) {
+    margin-top: 5px;
+  }
+
+  .section-nav-top a:hover:not(.active) {
+    color: #ffffff;
+  }
+
+  .section-nav-top a.active {
+    background-color: #cc0000;
+    color: #ffffff;
+  }
+
+  .section-nav-top ul li a:hover {
+    opacity: 0.8;
+  }
+}
+
+/* tablet styles */
+@media screen and (min-width:481px) and (max-width:991px) {
+
+  /* tablet navigation bar is the same as the desktop with smaller styles */
+  #mobile-nav {
+    display: none;
+  }
+
+  .section-nav-top {
+    width: 100%;
+    padding: 10px 0px;
+    overflow: hidden;
+    position: fixed;
+    margin: 0;
+    top: 0;
+    z-index: 99;
+  }
+
+  .section-nav-top ul {
+    list-style-type: none;
+  }
+
+  .section-nav-top li {
+    float: left;
+  }
+
+  /* change the padding and font size */
+  .section-nav-top a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 25px;
+    border-radius: 1px;
+    width: 30px;
+    color: #808080;
+  }
+
+  .section-nav-top li:not(.logo) {
+    margin-top: 5px;
+  }
+
+  .section-nav-top a:hover:not(.active) {
+    color: #ffffff;
+  }
+
+  .section-nav-top a.active {
+    background-color: #cc0000;
+    color: #ffffff;
+  }
+
+  .section-nav-top ul li a:hover {
+    opacity: 0.8;
+  }
+
+  .darken-pseudo {
+    position: relative;
+  }
+
+  .darken-pseudo:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .darken-with-text span {
+    margin: 0;
+    color: white;
+    padding-top: 30px;
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+  }
+
+  /* font is smaller than Desktop view*/
+  .darken-with-text h1 {
+    margin-top: 100px;
+    font-size: 26px;
+    color: white;
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+    text-align: center;
+  }
+
+  /*smaller font*/
+  .darken-with-text h2 {
+    margin: 0;
+    color: white;
+    padding-top: 20px;
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+  }
+
+  /* smaller font*/
+  .darken-with-text p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: white;
+    padding-top: 12px;
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+    text-align: center;
+  }
+
+  /* Remove the slideshow from the menu page*/
+  #slideshow {
+    display: none;
+  }
+}
+
+/* mobile styles*/
+@media all and (max-width: 480px) {
+
+  /* turn off the desktop navigation bar */
+  #desktop-nav {
+    display: none;
+  }
+
+  .section-nav-top {
+    width: 100%;
+    padding: 10px 0px;
+    overflow: hidden;
+    position: fixed;
+    margin: 0;
+    top: 0;
+    z-index: 99;
+  }
+
+  .section-nav-top ul {
+    list-style-type: none;
+  }
+
+  /* float to the right */
+  .section-nav-top li {
+    float: right;
+    margin-right:5px;
+  }
+
+  /* smaller font and padding */
+  .section-nav-top a {
+    padding: 7px;
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 25px;
+    border-radius: 1px;
+    width: 30px;
+    color: #808080;
+  }
+
+  /* remove the logo and just show the Active menu in mobile view */
+  .section-nav-top a:hover:not(.active) {
+    color: #ffffff;
+  }
+
+  .section-nav-top a.active {
+    background-color: #cc0000;
+    color: #ffffff;
+  }
+
+  .section-nav-top ul li a:hover {
+    opacity: 0.8;
+  }
+
+  ul.section-nav-top li:not(.logo) {
+    margin-top: 5px;
+  }
+
+  .darken-pseudo {
+    position: relative;
+  }
+
+  .darken-pseudo:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  /* font is smaller than the tablet*/
+  .darken-with-text p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 20px;
+    color: white;
+    padding-top: 12px;
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+    text-align: center;
+  }
+
+  .darken-with-text span {
+    margin: 0;
+    color: white;
+    padding-top: 30px;
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+  }
+
+  .darken-with-text h1 {
+    margin-top: 100px;
+    font-size: 22px;
+    color: white;
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+    text-align: center;
+  }
+
+  .darken-with-text h2 {
+    margin: 0;
+    color: white;
+    padding-top: 18px;
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+  }
+
+  .image-block {
+    position: relative;
+    width: 100%;
+  }
+
+  .text-block {
+    position: relative;
+    left: 10px;
+    top: 10px;
+    right: 0px;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* .secondary-image-block {
+    float: left;
+  } */
+
+  /* remove the slideshow from the menu */
+  #slideshow {
+    display: none;
+  }
+
+  /* change the layout of the table for mobile view */
+  #reservation-info thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  #reservation-info tr {
+    display: block;
+  }
+
+  #reservation-info td {
+    display: block;
+    text-align: center;
+  }
+}
